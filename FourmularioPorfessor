@@ -1,0 +1,76 @@
+/*
+* To change this license header, choose License Headers in Project Properties.
+* To change this template file, choose Tools | Templates
+* and open the template in the editor.
+*/
+package usarformulariousuario;
+ 
+/**
+*
+* @author Aluno
+*/
+ 
+import java.awt.*;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JOptionPane;
+public class FourmularioPorfessor extends Frame implements ActionListener{
+protected Dimension dQuadro, dRotulo, dCaixaTexto, dBotao;
+protected Button bCadastrar, bSair;
+protected TextField tfUsuario, tfidade;
+protected Label lUsuario,lidade;
+        
+        Professor professorUm = new Professor("Storion","48");
+        public FourmularioPorfessor (){
+        Dimension dQuadro = new Dimension(290,200);
+        Dimension dRotulo = new Dimension(45,25);
+        Dimension dCaixaTexto = new Dimension(180,25);
+        Dimension dBotao = new Dimension(100,25);
+        setTitle("Formulario Professor");
+        setResizable(false);
+        setSize(dQuadro);
+        setLocation(400,200);
+        setLayout(null);
+        lUsuario = new Label("usuário");
+        lUsuario.setSize(dRotulo);
+        lUsuario.setLocation(25,50);
+        
+        lidade = new Label("Idade");
+        lidade.setSize(dRotulo);
+        lidade.setLocation(25,100);
+        
+        tfUsuario = new TextField();
+        tfUsuario.setSize(dCaixaTexto);
+        tfUsuario.setLocation(80,50);
+        
+        tfidade = new TextField();
+        tfidade.setSize(dCaixaTexto);
+        tfidade.setLocation(80,100);
+        
+        bCadastrar = new Button("Cadastrar");
+        bCadastrar.setSize(dBotao);
+        bCadastrar.setLocation(25,150);
+        bCadastrar.addActionListener(this);
+        bSair = new Button("Sair");
+        bSair.setSize(dBotao);
+        bSair.setLocation(130,150);
+        bSair.addActionListener(this);
+        add(lUsuario);
+        add(lidade);
+        add(tfUsuario);
+        add(tfidade);
+        add(bCadastrar);
+        add(bSair);
+    }
+public void actionPerformed(ActionEvent evento){
+    if(evento.getSource()==bCadastrar){
+        professorUm.setNome(tfUsuario.getText());
+        professorUm.setIdade(tfidade.getText());
+        professorUm.exibirProfessor();
+    }
+    if(evento.getSource()== bSair){
+        System.out.println("Fim do Aplicativo. Obrigada!");
+            System.exit(0);
+    }
+}
+}
