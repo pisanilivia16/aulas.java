@@ -1,0 +1,25 @@
+
+*/
+
+package usarformulariousuario;
+ 
+/**
+
+*
+
+* @author Aluno
+
+*/
+
+public class UsarFormularioProfessor {
+
+public static void main (String args[]){
+
+FourmularioPorfessor formUmNovo = new FourmularioPorfessor();
+
+formUmNovo.setVisible(true);
+
+}
+
+}
+ 
